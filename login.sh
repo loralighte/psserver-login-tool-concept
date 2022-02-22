@@ -3,13 +3,10 @@
 : ${DIALOG_CANCEL=1}
 exec 3>&1
 username=$(dialog \
-    --title "Login Screen" \
-    --inputbox "Username:" \
-        16 51 2>&1 1>&3)
-password=$(dialog \
-    --title "Login Screen" \
-    --inputbox "Password:" \
-        16 51 2>&1 1>&3)
+    --backtitle "Login-Tool" \
+    --title "Please Enter Your Username" \
+    --inputbox "" \
+        7 51 2>&1 1>&3)
 return_value=$?
 exec 3>&-
 case $return_value in
@@ -20,4 +17,4 @@ case $return_value in
         ;;
 esac
 
-printf '%s\n' "$password" | su - "$username" 
+su - $username
