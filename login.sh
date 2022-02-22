@@ -17,4 +17,4 @@ case $return_value in
         ;;
 esac
 clear
-su - $username | echo "Welcome $username! Please enter your password"
+su - $username
