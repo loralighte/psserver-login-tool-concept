@@ -16,5 +16,5 @@ case $return_value in
         exit
         ;;
 esac
-
-su - $username
+clear
+su - $username 
